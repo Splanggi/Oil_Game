@@ -2,18 +2,22 @@
 
 print("hello")
 
-try:
-    test
-except:
-    print("no test")
-finally:
+
+def test():
+    print("running test")
+
+
+def fart():
+    print("running fart")
+
+
+def shit():
+    print("running shit")
+
+
+for func in (test, fart, shit):
     try:
-        fart
-    except:
-        print("no fart")
-    finally:
-        try:
-            shit
-        except:
-            print("no shit")
+        func()
+    except Exception as exc:
+        print(f"{func.__name__} failed: {exc}")
             
